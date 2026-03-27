@@ -22,10 +22,10 @@ const products = [
     name: "Minimalist Cloud Sofa", 
     price: 899, 
     rating: 4.5, 
-    image: "/images/Cloud1.jpg", 
+    image: "images/Cloud1.jpg", 
     images: [
-      "/images/Cloud2.jpg",
-      "/images/Cloud1.jpg",
+      "images/Cloud2.jpg",
+      "images/Cloud1.jpg",
     ],
     brand: "Cloud", 
     material: "Fabric", 
@@ -39,11 +39,11 @@ const products = [
     name: "Velvet Elegance Couch", 
     price: 1499, 
     rating: 5, 
-    image: "/images/Elegance1.jpg", 
+    image: "images/Elegance1.jpg", 
     images: [
-      "/images/Elegance2.jpg",
-      "/images/Elegance3.jpg",
-      "/images/Elegance4.jpg"
+      "images/Elegance2.jpg",
+      "images/Elegance3.jpg",
+      "images/Elegance4.jpg"
     ],
     brand: "Oxford", 
     material: "Velvet", 
@@ -57,11 +57,11 @@ const products = [
     name: "Nordic Lounge Sofa", 
     price: 799, 
     rating: 4.5, 
-    image: "/images/nordic1.png", 
+    image: "images/nordic1.png", 
     images: [
-      "/images/nordic2.png",
-      "/images/nordic3.png",
-      "/images/nordic4.png",
+      "images/nordic2.png",
+      "images/nordic3.png",
+      "images/nordic4.png",
     ],
     brand: "Nordic", 
     material: "Fabric", 
@@ -75,10 +75,10 @@ const products = [
     name: "Royal Chesterfield", 
     price: 1999, 
     rating: 5, 
-    image: "/images/chelsea1.avif", 
+    image: "images/chelsea1.avif", 
     images: [
-      "/images/chelsea2.avif",
-      "/images/chelsea3.avif",
+      "images/chelsea2.avif",
+      "images/chelsea3.avif",
       
     ],
     brand: "Oxford", 
@@ -93,11 +93,11 @@ const products = [
     name: "Modern Sectional Sofa", 
     price: 1699, 
     rating: 4.5, 
-    image: "/images/sectional1.png", 
+    image: "images/sectional1.png", 
     images: [
-      "/images/sectional2.jpg",
-      "/images/sectional3.jpg",
-      "/images/sectional4.jpg"
+      "images/sectional2.jpg",
+      "images/sectional3.jpg",
+      "images/sectional4.jpg"
     ],
     brand: "ModernLiving", 
     material: "Fabric", 
@@ -129,11 +129,11 @@ const products = [
     name: "Linen Loveseat Sofa", 
     price: 1099, 
     rating: 4.5, 
-    image: "/images/loveseat1.png", 
+    image: "images/loveseat1.png", 
     images: [
-      "/images/loveseat2.png",
-      "/images/loveseat3.png",
-      "/images/loveseat1.png"
+      "images/loveseat2.png",
+      "images/loveseat3.png",
+      "images/loveseat1.png"
     ],
     brand: "Cloud", 
     material: "Linen", 
@@ -147,11 +147,11 @@ const products = [
     name: "Kivik 3-Seat Sofa", 
     price: 999, 
     rating: 4.5, 
-    image: "/images/Kivi2.avif", 
+    image: "images/Kivi2.avif", 
     images: [
-      "/images/Kivi1.avif",
-      "/images/Kivi3.avif",
-      "/images/Kivi4.avif"
+      "images/Kivi1.avif",
+      "images/Kivi3.avif",
+      "images/Kivi4.avif"
     ],
     brand: "IKEA", 
     material: "Fabric", 
@@ -165,11 +165,11 @@ const products = [
     name: "Söderhamn Sectional", 
     price: 1299, 
     rating: 4.8, 
-    image: "/images/Soo2.avif", 
+    image: "images/Soo2.avif", 
     images: [
-      "/images/Soo1.avif",
-      "/images/Soo3.avif",
-      "/images/Soo4.avif"
+      "images/Soo1.avif",
+      "images/Soo3.avif",
+      "images/Soo4.avif"
     ],
     brand: "IKEA", 
     material: "Fabric", 
@@ -183,11 +183,11 @@ const products = [
     name: "Morabo Leather Sofa", 
     price: 1499, 
     rating: 4.7, 
-    image: "/images/mo1.avif", 
+    image: "images/mo1.avif", 
     images: [
-      "/images/mo2.avif",
-      "/images/mo3.avif",
-      "/images/mo4.avif"
+      "images/mo2.avif",
+      "images/mo3.avif",
+      "images/mo4.avif"
     ],
     brand: "IKEA", 
     material: "Leather", 
@@ -201,11 +201,11 @@ const products = [
     name: "Friheten Sleeper Sofa", 
     price: 899, 
     rating: 4.6, 
-    image: "/images/fr1.jpg", 
+    image: "images/fr1.jpg", 
     images: [
-      "/images/fr2.jpg",
-      "/images/fr3.jpg",
-      "/images/fr4.jpg"
+      "images/fr2.jpg",
+      "images/fr3.jpg",
+      "images/fr4.jpg"
     ],
     brand: "IKEA", 
     material: "Fabric", 
@@ -219,11 +219,11 @@ const products = [
     name: "Hendricks Velvet Sofa", 
     price: 1299, 
     rating: 4.9, 
-    image: "/images/Hendrick.png", 
+    image: "images/Hendrick.png", 
     images: [
-      "/images/handrick2.png",
-      "/images/hendick1.png",
-      "/images/handrick2.png"
+      "images/handrick2.png",
+      "images/hendick1.png",
+      "images/handrick2.png"
     ],
     brand: "Habitat", 
     material: "Velvet", 
@@ -237,11 +237,11 @@ const products = [
     name: "Apollo 3-Seater Sofa", 
     price: 1150, 
     rating: 4.5, 
-    image: "/images/Apollo1.png", 
+    image: "images/Apollo1.png", 
     images: [
-      "/images/Apollo2.png",
-      "/images/Apollo3.png",
-      "/images/Apollo4.png"
+      "images/Apollo2.png",
+      "images/Apollo3.png",
+      "images/Apollo4.png"
     ],
     brand: "Urban Ladder", 
     material: "Fabric", 
@@ -255,11 +255,11 @@ const products = [
     name: "Emily 2-Seater Sofa", 
     price: 850, 
     rating: 4.4, 
-    image: "/images/Emily1.webp", 
+    image: "images/Emily1.webp", 
     images: [
-      "/images/Emily1.webp",
-      "/images/Emily2.webp",
-      "/images/Emily3.webp"
+      "images/Emily1.webp",
+      "images/Emily2.webp",
+      "images/Emily3.webp"
     ],
     brand: "Home Centre", 
     material: "Fabric", 
@@ -273,11 +273,11 @@ const products = [
     name: "West Elm Harmony Sofa", 
     price: 1899, 
     rating: 4.8, 
-    image: "/images/elm.jpg", 
+    image: "images/elm.jpg", 
     images: [
-      "/images/elm.jpg",
-      "/images/elm2.jpg",
-      "/images/elm3.jpg"
+      "images/elm.jpg",
+      "images/elm2.jpg",
+      "images/elm3.jpg"
     ],
     brand: "West Elm", 
     material: "Fabric", 
@@ -291,11 +291,11 @@ const products = [
     name: "Chesterfield Classic Sofa", 
     price: 1799, 
     rating: 4.9, 
-    image: "/images/ches1.jpg", 
+    image: "images/ches1.jpg", 
     images: [
-      "/images/ches1.jpg",
-      "/images/ches2.webp",
-      "/images/ches3.jpg"
+      "images/ches1.jpg",
+      "images/ches2.webp",
+      "images/ches3.jpg"
     ],
     brand: "Habitat", 
     material: "Leather", 
@@ -309,11 +309,11 @@ const products = [
     name: "Porto Corner Sofa", 
     price: 2199, 
     rating: 4.7, 
-    image: "/images/Po1.jpg", 
+    image: "images/Po1.jpg", 
     images: [
-      "/images/Po1.jpg",
-      "/images/Po2.jpg",
-      "/images/Po3.jpg"
+      "images/Po1.jpg",
+      "images/Po2.jpg",
+      "images/Po3.jpg"
     ],
     brand: "Habitat", 
     material: "Fabric", 
@@ -327,11 +327,11 @@ const products = [
     name: "Lombard Leather Sofa", 
     price: 1899, 
     rating: 4.8, 
-    image: "/images/Lom1.jpg", 
+    image: "images/Lom1.jpg", 
     images: [
-      "/images/Lom1.jpg",
-      "/images/Lom2.jpg",
-      "/images/Lom3.jpg"
+      "images/Lom1.jpg",
+      "images/Lom2.jpg",
+      "images/Lom3.jpg"
     ],
     brand: "Habitat", 
     material: "Leather", 
@@ -345,11 +345,10 @@ const products = [
     name: "Celine Velvet Loveseat", 
     price: 1250, 
     rating: 4.6, 
-    image: "https://images.unsplash.com/photo-1550254478-ead40cc54513?auto=format&fit=crop&w=800&q=80", 
+    image: "images/loveseat1.png", 
     images: [
-      "https://images.unsplash.com/photo-1550254478-ead40cc54513?auto=format&fit=crop&w=800&q=80",
-      "/images/loveseat2.png",
-      "/images/loveseat3.png"
+      "images/loveseat2.png",
+      "images/loveseat3.png"
     ],
     brand: "Habitat", 
     material: "Velvet", 
@@ -363,10 +362,10 @@ const products = [
     name: "Kendal Fabric Sofa", 
     price: 1399, 
     rating: 4.7, 
-    image: "/images/Kendal1.png", 
+    image: "images/Kendal1.png", 
     images: [
-      "/images/Kendal2.png",
-      "/images/Kendal1.png",
+      "images/Kendal2.png",
+      "images/Kendal1.png",
     ],
     brand: "Habitat", 
     material: "Fabric", 
@@ -380,11 +379,11 @@ const products = [
     name: "Malabar Wooden Frame Sofa", 
     price: 1150, 
     rating: 4.6, 
-    image: "/images/sof1.jpg", 
+    image: "images/sof1.jpg", 
     images: [
-      "/images/sof1.jpg",
-      "/images/sof2.jpg",
-      "/images/sof3.jpg"
+      "images/sof1.jpg",
+      "images/sof2.jpg",
+      "images/sof3.jpg"
     ],
     brand: "Urban Ladder", 
     material: "Wood", 
@@ -398,11 +397,11 @@ const products = [
     name: "Tokyo Reclining Sofa", 
     price: 1600, 
     rating: 4.8, 
-    image: "/images/Tok1.webp", 
+    image: "images/Tok1.webp", 
     images: [
-      "/images/Tok1.webp",
-      "/images/Tok2.webp",
-      "/images/Tok3.webp"
+      "images/Tok1.webp",
+      "images/Tok2.webp",
+      "images/Tok3.webp"
     ],
     brand: "Urban Ladder", 
     material: "Leather", 
@@ -416,11 +415,11 @@ const products = [
     name: "Florence L-Shape Sofa", 
     price: 1850, 
     rating: 4.7, 
-    image: "/images/flo1.jpg", 
+    image: "images/flo1.jpg", 
     images: [
-      "/images/flo1.jpg",
-      "/images/flo2.jpg",
-      "/images/flo3.jpg"
+      "images/flo1.jpg",
+      "images/flo2.jpg",
+      "images/flo3.jpg"
     ],
     brand: "Urban Ladder", 
     material: "Fabric", 
@@ -434,11 +433,11 @@ const products = [
     name: "Oliver Sectional Sofa", 
     price: 1450, 
     rating: 4.5, 
-    image: "/images/Oliver1.jpg", 
+    image: "images/Oliver1.jpg", 
     images: [
-      "/images/Oliver2.jpg",
-      "/images/Oliver3.jpg",
-      "/images/Oliver4.jpg"
+      "images/Oliver2.jpg",
+      "images/Oliver3.jpg",
+      "images/Oliver4.jpg"
     ],
     brand: "Home Centre", 
     material: "Fabric", 
@@ -452,11 +451,11 @@ const products = [
     name: "Sophia Velvet Sofa", 
     price: 1290, 
     rating: 4.6, 
-    image: "/images/So1.jpg", 
+    image: "images/So1.jpg", 
     images: [
-      "/images/So2.jpg",
-      "/images/So3.jpg",
-      "/images/So4.jpg"
+      "images/So2.jpg",
+      "images/So3.jpg",
+      "images/So4.jpg"
     ],
     brand: "Home Centre", 
     material: "Velvet", 
@@ -470,11 +469,11 @@ const products = [
     name: "Liam Reclining Sofa", 
     price: 1650, 
     rating: 4.4, 
-    image: "/images/rec1.jpg", 
+    image: "images/rec1.jpg", 
     images: [
-      "/images/rec1.jpg",
-      "/images/rec2.jpg",
-      "/images/rec3.jpg"
+      "images/rec1.jpg",
+      "images/rec2.jpg",
+      "images/rec3.jpg"
     ],
     brand: "Home Centre", 
     material: "Fabric", 
@@ -488,11 +487,11 @@ const products = [
     name: "Andes Sectional Sofa", 
     price: 2299, 
     rating: 4.9, 
-    image: "/images/andes1.jpg", 
+    image: "images/andes1.jpg", 
     images: [
-      "/images/andes1.jpg",
-      "/images/andes2.jpg",
-      "/images/andes3.jpg"
+      "images/andes1.jpg",
+      "images/andes2.jpg",
+      "images/andes3.jpg"
     ],
     brand: "West Elm", 
     material: "Fabric", 
@@ -506,11 +505,11 @@ const products = [
     name: "Haven Leather Sofa", 
     price: 2400, 
     rating: 4.8, 
-    image: "/images/haven1.webp", 
+    image: "images/haven1.webp", 
     images: [
-      "/images/haven1.webp",
-      "/images/haven2.webp",
-      "/images/haven3.webp"
+      "images/haven1.webp",
+      "images/haven2.webp",
+      "images/haven3.webp"
     ],
     brand: "West Elm", 
     material: "Leather", 
@@ -524,11 +523,11 @@ const products = [
     name: "Newport Sleeper Sofa", 
     price: 1750, 
     rating: 4.7, 
-    image: "/images/newp1.avif", 
+    image: "images/newp1.avif", 
     images: [
-      "/images/newp1.avif",
-      "/images/newp2.avif",
-      "/images/newp3.avif"
+      "images/newp1.avif",
+      "images/newp2.avif",
+      "images/newp3.avif"
     ],
     brand: "West Elm", 
     material: "Fabric", 
