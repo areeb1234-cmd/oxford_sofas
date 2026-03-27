@@ -39,11 +39,11 @@ const products = [
     name: "Velvet Elegance Couch", 
     price: 1499, 
     rating: 5, 
-    image: "images/Elegance1.jpg", 
+    image: "images/elegance1.jpg", 
     images: [
-      "images/Elegance2.jpg",
-      "images/Elegance3.jpg",
-      "images/Elegance4.jpg"
+      "images/elegance2.jpg",
+      "images/elegance3.jpg",
+      "images/elegance4.jpg"
     ],
     brand: "Oxford", 
     material: "Velvet", 
@@ -237,11 +237,11 @@ const products = [
     name: "Apollo 3-Seater Sofa", 
     price: 1150, 
     rating: 4.5, 
-    image: "images/Apollo1.png", 
+    image: "images/apollo1.png", 
     images: [
-      "images/Apollo2.png",
-      "images/Apollo3.png",
-      "images/Apollo4.png"
+      "images/apollo2.png",
+      "images/apollo3.png",
+      "images/apollo4.png"
     ],
     brand: "Urban Ladder", 
     material: "Fabric", 
@@ -255,11 +255,11 @@ const products = [
     name: "Emily 2-Seater Sofa", 
     price: 850, 
     rating: 4.4, 
-    image: "images/Emily1.webp", 
+    image: "images/emily1.webp", 
     images: [
-      "images/Emily1.webp",
-      "images/Emily2.webp",
-      "images/Emily3.webp"
+      "images/emily1.webp",
+      "images/emily2.webp",
+      "images/emily3.webp"
     ],
     brand: "Home Centre", 
     material: "Fabric", 
