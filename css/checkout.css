@@ -1,0 +1,376 @@
+/* Checkout & Profile Premium Styles */
+
+/* Glassmorphism & Premium Cards */
+.premium-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .premium-card {
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.premium-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .premium-card:hover {
+  box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Form Fields */
+.premium-form-control {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  border-radius: 12px;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+}
+
+.premium-form-control:focus {
+  background-color: var(--bg-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+  outline: none;
+}
+
+[data-theme="dark"] .premium-form-control {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .premium-form-control:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-label {
+  color: var(--text-color);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* Payment Method Switching */
+.payment-details-container {
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s ease;
+  max-height: 0;
+  opacity: 0;
+}
+
+.payment-details-container.active {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* Custom Radio Buttons */
+.premium-radio-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.premium-radio-option {
+  flex: 1;
+  position: relative;
+}
+
+.premium-radio-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.premium-radio-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+  font-weight: 600;
+  gap: 10px;
+}
+
+.premium-radio-label:hover {
+  border-color: var(--accent-color);
+  background: rgba(212, 175, 55, 0.02);
+}
+
+.premium-radio-label i {
+  font-size: 24px;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.premium-radio-option input[type="radio"]:checked + .premium-radio-label {
+  border-color: var(--accent-color);
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+}
+
+.premium-radio-option input[type="radio"]:checked + .premium-radio-label i {
+  color: var(--accent-color);
+}
+
+/* Order Summary */
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.summary-item:hover {
+  background-color: rgba(212, 175, 55, 0.05);
+  transform: translateX(5px);
+}
+
+.checkout-item-hover:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background-color: var(--bg-color) !important;
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-item-title {
+  font-weight: 600;
+}
+
+.summary-item-price {
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.5s ease;
+}
+
+.btn-glow:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+/* Coupon Modal */
+.coupon-card {
+  background: var(--card-bg);
+  border: 1px dashed var(--accent-color);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.coupon-card:hover {
+  background: rgba(212, 175, 55, 0.05);
+  transform: translateY(-2px);
+}
+
+.coupon-code {
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  background: rgba(212, 175, 55, 0.1);
+  padding: 5px 10px;
+  border-radius: 6px;
+  letter-spacing: 2px;
+}
+
+.coupon-code.text-muted {
+  color: var(--text-muted) !important;
+  background: var(--border-color);
+  border: 1px dashed var(--text-muted);
+}
+
+/* Success Animation */
+.success-checkmark {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+}
+
+.check-icon {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  border-radius: 50%;
+  box-sizing: content-box;
+  border: 4px solid #4CAF50;
+}
+
+.check-icon::before {
+  top: 3px;
+  left: -2px;
+  width: 30px;
+  transform-origin: 100% 50%;
+  border-radius: 100px 0 0 100px;
+}
+
+.check-icon::after {
+  top: 0;
+  left: 30px;
+  width: 60px;
+  transform-origin: 0 50%;
+  border-radius: 0 100px 100px 0;
+  animation: rotate-circle 4.25s ease-in;
+}
+
+.check-icon::before, .check-icon::after {
+  content: '';
+  height: 100px;
+  position: absolute;
+  background: var(--card-bg);
+  transform: rotate(-45deg);
+}
+
+.icon-line {
+  height: 5px;
+  background-color: #4CAF50;
+  display: block;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+}
+
+.icon-line.line-tip {
+  top: 46px;
+  left: 14px;
+  width: 25px;
+  transform: rotate(45deg);
+  animation: icon-line-tip 0.75s;
+}
+
+.icon-line.line-long {
+  top: 38px;
+  right: 8px;
+  width: 47px;
+  transform: rotate(-45deg);
+  animation: icon-line-long 0.75s;
+}
+
+.icon-circle {
+  top: -4px;
+  left: -4px;
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  box-sizing: content-box;
+  border: 4px solid rgba(76, 175, 80, 0.5);
+}
+
+.icon-fix {
+  top: 8px;
+  width: 5px;
+  left: 26px;
+  z-index: 1;
+  height: 85px;
+  position: absolute;
+  transform: rotate(-45deg);
+  background-color: var(--card-bg);
+}
+
+@keyframes icon-line-tip {
+  0% { width: 0; left: 1px; top: 19px; }
+  54% { width: 0; left: 1px; top: 19px; }
+  70% { width: 50px; left: -8px; top: 37px; }
+  84% { width: 17px; left: 21px; top: 48px; }
+  100% { width: 25px; left: 14px; top: 46px; }
+}
+
+@keyframes icon-line-long {
+  0% { width: 0; right: 46px; top: 54px; }
+  65% { width: 0; right: 46px; top: 54px; }
+  84% { width: 55px; right: 0px; top: 35px; }
+  100% { width: 47px; right: 8px; top: 38px; }
+}
+
+.border-custom {
+  border-color: var(--border-color) !important;
+}
+
+/* Profile Coupons */
+.nav-pills .nav-link {
+  color: var(--text-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.coupon-status-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.status-available {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4CAF50;
+}
+
+.status-used {
+  background: rgba(108, 117, 125, 0.1);
+  color: #6c757d;
+}
+
+.status-expired {
+  background: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .checkout-layout {
+    flex-direction: column-reverse;
+  }
+}

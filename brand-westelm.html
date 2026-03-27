@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>West Elm | Oxford Sofas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/brand-page.css">
+</head>
+<body class="pt-5 mt-4">
+  <div id="navbar-container"></div>
+
+  <!-- 1. BRAND HERO SECTION -->
+  <section class="brand-page-hero">
+    <div class="brand-page-hero-bg parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="brand-page-hero-overlay"></div>
+    
+    <!-- Floating Shapes -->
+    <div class="brand-floating-shape shape-1"></div>
+    <div class="brand-floating-shape shape-2"></div>
+
+    <div class="brand-page-hero-content">
+      <h1 class="display-3 font-playfair fw-bold mb-3">West Elm</h1>
+      <p class="brand-tagline">Modern Furniture & Home Decor</p>
+    </div>
+    <div class="scroll-indicator">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- 2. BRAND STORY -->
+  <section class="brand-story-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0 reveal slide-left">
+          <div class="brand-story-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80" alt="West Elm Story" class="brand-story-img">
+          </div>
+        </div>
+        <div class="col-lg-6 reveal slide-right">
+          <div class="brand-story-text">
+            <h2 class="font-playfair fw-bold mb-4">The West Elm Philosophy</h2>
+            <p class="lead mb-4">Good design should do good.</p>
+            <p class="text-muted mb-4">We believe in great design, from around the corner to around the globe. That means supporting the people behind your products with ethical production, worker well-being and economic impact.</p>
+            <p class="text-muted">We're designing 95% of our products in-house. Our design team in Brooklyn creates exclusive collections that you won't find anywhere else. We're all about creating spaces that reflect you and what you love.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. BRAND PRODUCTS SECTION -->
+  <section class="brand-products-section" id="brand-products">
+    <div class="container">
+      <div class="text-center mb-5 reveal fade-up">
+        <h2 class="font-playfair fw-bold">West Elm Collection</h2>
+        <p class="text-muted">Discover our curated selection of West Elm sofas</p>
+      </div>
+      
+      <div class="row g-4" id="brand-product-grid">
+        <!-- Products will be dynamically loaded here by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BRAND GALLERY -->
+  <section class="brand-gallery-section">
+    <div class="container">
+      <div class="text-center mb-5 reveal fade-up">
+        <h2 class="font-playfair fw-bold">Inspiration Gallery</h2>
+        <p class="text-muted">See how West Elm transforms living spaces</p>
+      </div>
+      
+      <div class="masonry-grid reveal fade-up stagger-1">
+        <div class="masonry-item">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Gallery 1" class="masonry-img">
+          <div class="masonry-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="masonry-item">
+          <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=600&q=80" alt="Gallery 2" class="masonry-img">
+          <div class="masonry-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="masonry-item">
+          <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=600&q=80" alt="Gallery 3" class="masonry-img">
+          <div class="masonry-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="masonry-item">
+          <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=600&q=80" alt="Gallery 4" class="masonry-img">
+          <div class="masonry-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="masonry-item">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80" alt="Gallery 5" class="masonry-img">
+          <div class="masonry-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="masonry-item">
+          <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=600&q=80" alt="Gallery 6" class="masonry-img">
+          <div class="masonry-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. WHY PEOPLE LOVE THIS BRAND -->
+  <section class="brand-features-section">
+    <div class="container">
+      <div class="text-center mb-5 reveal fade-up">
+        <h2 class="font-playfair fw-bold">Why Choose West Elm</h2>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-3 col-sm-6 reveal fade-up stagger-1">
+          <div class="feature-glass-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 class="feature-title">Sustainable</h3>
+            <p class="feature-desc">Committed to using renewable and recycled materials.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 reveal fade-up stagger-2">
+          <div class="feature-glass-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <h3 class="feature-title">Fair Trade</h3>
+            <p class="feature-desc">Supporting workers and their communities globally.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 reveal fade-up stagger-3">
+          <div class="feature-glass-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3 class="feature-title">Original Design</h3>
+            <p class="feature-desc">Exclusive collections designed in-house in Brooklyn.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 reveal fade-up stagger-4">
+          <div class="feature-glass-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-couch"></i>
+            </div>
+            <h3 class="feature-title">Comfort</h3>
+            <p class="feature-desc">Premium materials for ultimate relaxation and style.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. RELATED PRODUCTS -->
+  <section class="related-products-section">
+    <div class="container">
+      <div class="text-center mb-5 reveal fade-up">
+        <h2 class="font-playfair fw-bold">More Sofas You May Like</h2>
+      </div>
+      
+      <div class="row g-4 reveal fade-up stagger-1" id="related-product-carousel">
+        <!-- Related products will be dynamically loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/compare.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/brand-page.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Parallax Effect
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxBg = document.querySelector('.parallax-bg');
+        if (parallaxBg) {
+          parallaxBg.style.transform = `translateY(${scrolled * 0.4}px)`;
+        }
+      });
+
+      // Reveal Animations
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      setTimeout(reveal, 100);
+
+      // Load Products
+      const brandProducts = [
+        { id: 108, name: "Harmony Sofa", price: 1599, brand: "West Elm", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=500&q=80" },
+        { id: 118, name: "Andes Sectional", price: 1899, brand: "West Elm", image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=500&q=80" },
+        { id: 119, name: "Haven Leather", price: 2100, brand: "West Elm", image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=500&q=80" },
+        { id: 120, name: "Newport Sleeper", price: 1450, brand: "West Elm", image: "https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=500&q=80" }
+      ];
+
+      const grid = document.getElementById('brand-product-grid');
+      brandProducts.forEach((product, index) => {
+        const delay = index + 1;
+        grid.innerHTML += `
+          <div class="col-6 col-md-4 col-lg-3 reveal fade-up stagger-${delay}">
+            <div class="brand-product-card">
+              <div class="brand-product-img-wrapper">
+                <img src="${product.image}" alt="${product.name}" class="brand-product-img">
+                <div class="brand-product-actions">
+                  <a href="#" class="brand-action-btn" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                  <a href="product.html?id=${product.id}" class="brand-action-btn" title="Quick View"><i class="far fa-eye"></i></a>
+                </div>
+              </div>
+              <div class="brand-product-info text-center">
+                <h3 class="brand-product-title">${product.name}</h3>
+                <div class="brand-product-price">$${product.price}</div>
+                <button class="brand-add-cart-btn w-100" onclick="addToCart(${product.id})">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      // Load Related Products
+      const relatedProducts = [
+        { id: 101, name: "IKEA Kivik", price: 499, brand: "IKEA", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=500&q=80" },
+        { id: 105, name: "Habitat Hendricks", price: 1299, brand: "Habitat", image: "https://images.unsplash.com/photo-1540574163026-643ea20d25b5?auto=format&fit=crop&w=500&q=80" },
+        { id: 106, name: "Urban Ladder Apollo", price: 850, brand: "Urban Ladder", image: "https://images.unsplash.com/photo-1512212621149-107ffe572d2f?auto=format&fit=crop&w=500&q=80" },
+        { id: 107, name: "Home Centre Emily", price: 750, brand: "Home Centre", image: "https://images.unsplash.com/photo-1550254478-ead40cc54513?auto=format&fit=crop&w=500&q=80" }
+      ];
+
+      const carousel = document.getElementById('related-product-carousel');
+      relatedProducts.forEach(product => {
+        carousel.innerHTML += `
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="brand-product-card">
+              <div class="brand-product-img-wrapper">
+                <img src="${product.image}" alt="${product.name}" class="brand-product-img">
+                <div class="brand-product-actions">
+                  <a href="#" class="brand-action-btn" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                  <a href="product.html?id=${product.id}" class="brand-action-btn" title="Quick View"><i class="far fa-eye"></i></a>
+                </div>
+              </div>
+              <div class="brand-product-info text-center">
+                <h3 class="brand-product-title">${product.name}</h3>
+                <div class="brand-product-price">$${product.price}</div>
+                <button class="brand-add-cart-btn w-100" onclick="addToCart(${product.id})">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    });
+  </script>
+</body>
+</html>

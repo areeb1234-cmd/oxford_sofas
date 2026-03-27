@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Oxford Sofas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body class="pt-5 mt-4">
+  <div id="navbar-container"></div>
+
+  <!-- Animated Shop Hero Section -->
+  <div class="shop-hero mb-5">
+    <div class="shop-hero-bg-shape shop-shape-1"></div>
+    <div class="shop-hero-bg-shape shop-shape-2"></div>
+    
+    <!-- Floating Furniture Elements (2D/3D effect) -->
+    <div class="floating-furniture ff-1">
+      <img src="images/shophero.png" alt="Floating Sofa" class="rounded-circle shadow-lg parallax-img" style="object-fit: cover; height: 150px; width: 150px;">
+    </div>
+    <div class="floating-furniture ff-2">
+      <img src="images/shophero1.png" alt="Floating Sofa" class="rounded shadow-lg parallax-img" style="object-fit: cover; height: 200px; width: 200px;">
+    </div>
+    <div class="floating-furniture ff-3">
+      <img src="images/shophero2.png" alt="Floating Sofa" class="rounded shadow-sm parallax-img" style="object-fit: cover; height: 120px; width: 120px;">
+    </div>
+
+    <div class="container text-center reveal shop-hero-content">
+      <h1 class="display-3 font-playfair fw-bold mb-3" style="color: var(--heading-color);">Explore Luxury Sofas</h1>
+      <p class="lead mb-4 mx-auto" style="max-width: 600px; color: var(--text-color); opacity: 0.8;">Discover our curated collection of premium furniture designed to elevate your living space with timeless elegance and unparalleled comfort.</p>
+      <a href="#shop-section" class="btn btn-gold btn-lg rounded-pill px-5 py-3 shadow-sm btn-glow">Shop Collection</a>
+    </div>
+  </div>
+
+
+  <div class="container mb-5" id="shop-section">
+    <div class="row">
+      <!-- Sidebar Filters -->
+      <div class="col-lg-3 mb-4">
+        <div class="d-flex align-items-center justify-content-between mb-3 d-lg-none">
+          <h4 class="font-playfair mb-0" style="color: var(--heading-color);">Filters</h4>
+          <button class="btn btn-outline-dark-custom" type="button" data-bs-toggle="collapse" data-bs-target="#filterSection" aria-expanded="false" aria-controls="filterSection">
+            <i class="fas fa-filter me-2"></i> Filter Products
+          </button>
+        </div>
+        <div class="collapse d-lg-block" id="filterSection">
+          <div class="filter-panel p-4 sticky-top w-100" style="top: 100px; z-index: 10;">
+            <h4 class="font-playfair mb-4 d-none d-lg-block" style="color: var(--heading-color);">Filters</h4>
+            
+            <div class="mb-4">
+                <h6 class="fw-bold mb-3 text-uppercase tracking-wider small" style="color: var(--heading-color);">Price Range</h6>
+                <input type="range" class="form-range price-range-slider" id="priceRange" min="0" max="5000" step="100" value="5000">
+                <div class="d-flex justify-content-between mt-2">
+                  <span class="small" style="color: var(--text-color); opacity: 0.7;">$0</span>
+                  <span class="small fw-bold" id="priceValue" style="color: var(--accent-color);">$5000</span>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <h6 class="fw-bold mb-3 text-uppercase tracking-wider small" style="color: var(--heading-color);">Category</h6>
+                <div class="form-check mb-2">
+                  <input class="form-check-input filter-checkbox" type="checkbox" value="Luxury Sofas" id="cat-luxury" data-filter="category">
+                  <label class="form-check-label" for="cat-luxury" style="color: var(--text-color);">Luxury Sofas</label>
+                </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input filter-checkbox" type="checkbox" value="Modern Sofas" id="cat-modern" data-filter="category">
+                  <label class="form-check-label" for="cat-modern" style="color: var(--text-color);">Modern Sofas</label>
+                </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input filter-checkbox" type="checkbox" value="Sectional Sofas" id="cat-sectional" data-filter="category">
+                  <label class="form-check-label" for="cat-sectional" style="color: var(--text-color);">Sectional Sofas</label>
+                </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input filter-checkbox" type="checkbox" value="Leather Sofas" id="cat-leather-sofa" data-filter="category">
+                  <label class="form-check-label" for="cat-leather-sofa" style="color: var(--text-color);">Leather Sofas</label>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <h6 class="fw-bold mb-3 text-uppercase tracking-wider small" style="color: var(--heading-color);">Material</h6>
+                <div class="form-check mb-2">
+                  <input class="form-check-input filter-checkbox" type="checkbox" value="Leather" id="mat-leather" data-filter="material">
+                  <label class="form-check-label" for="mat-leather" style="color: var(--text-color);">Leather</label>
+                </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input filter-checkbox" type="checkbox" value="Fabric" id="mat-fabric" data-filter="material">
+                  <label class="form-check-label" for="mat-fabric" style="color: var(--text-color);">Fabric</label>
+                </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input filter-checkbox" type="checkbox" value="Velvet" id="mat-velvet" data-filter="material">
+                  <label class="form-check-label" for="mat-velvet" style="color: var(--text-color);">Velvet</label>
+                </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input filter-checkbox" type="checkbox" value="Linen" id="mat-linen" data-filter="material">
+                  <label class="form-check-label" for="mat-linen" style="color: var(--text-color);">Linen</label>
+                </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input filter-checkbox" type="checkbox" value="Wood" id="mat-wood" data-filter="material">
+                  <label class="form-check-label" for="mat-wood" style="color: var(--text-color);">Wood</label>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <h6 class="fw-bold mb-3 text-uppercase tracking-wider small" style="color: var(--heading-color);">Rating</h6>
+                <div class="form-check mb-2">
+                  <input class="form-check-input filter-checkbox" type="checkbox" value="4" id="rating-4" data-filter="rating">
+                  <label class="form-check-label" for="rating-4" style="color: var(--text-color);">
+                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i> & Up
+                  </label>
+                </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input filter-checkbox" type="checkbox" value="5" id="rating-5" data-filter="rating">
+                  <label class="form-check-label" for="rating-5" style="color: var(--text-color);">
+                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i> 5 Stars
+                  </label>
+                </div>
+              </div>
+
+              <button class="btn btn-outline-dark-custom w-100 mt-2" id="clear-filters">Clear All</button>
+              <button class="btn btn-gold w-100 mt-3 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#filterSection">View Results</button>
+            </div>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="col-lg-9">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 reveal gap-3">
+          <p class="mb-0" id="product-count" style="color: var(--text-color); opacity: 0.8;">Showing all products</p>
+          <div class="d-flex align-items-center">
+            <label class="me-2 small text-uppercase tracking-wider" style="color: var(--text-color); opacity: 0.8;">Sort by:</label>
+            <select class="form-select form-select-sm w-auto border-0 shadow-sm" id="sort-select" style="background-color: var(--card-bg); color: var(--text-color);">
+              <option value="default">Default</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="row g-4" id="shop-products">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-container"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/compare.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/filters.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Scroll Reveal
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      setTimeout(reveal, 100);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | Oxford Sofas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .faq-accordion .accordion-item {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 1rem !important;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+      overflow: hidden;
+    }
+    [data-theme="dark"] .faq-accordion .accordion-item {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    }
+    .faq-accordion .accordion-button {
+      background: transparent;
+      font-weight: 600;
+      color: var(--text-color);
+      padding: 1.5rem;
+      box-shadow: none;
+      border: none;
+    }
+    .faq-accordion .accordion-button:not(.collapsed) {
+      color: var(--accent-color);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    [data-theme="dark"] .faq-accordion .accordion-button:not(.collapsed) {
+      background: rgba(0, 0, 0, 0.3);
+    }
+    .faq-accordion .accordion-button::after {
+      filter: grayscale(1);
+    }
+    .faq-accordion .accordion-button:not(.collapsed)::after {
+      filter: none;
+    }
+    .faq-accordion .accordion-body {
+      padding: 0 1.5rem 1.5rem;
+      color: var(--text-color);
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body class="pt-5 mt-4">
+  <div id="navbar-container"></div>
+
+  <div class="bg-light py-5 mb-5 border-bottom">
+    <div class="container text-center reveal">
+      <h1 class="display-4 font-playfair fw-bold mb-3">Frequently Asked Questions</h1>
+      <p class="lead text-muted">Find answers to common questions about our products, shipping, and more.</p>
+    </div>
+  </div>
+
+  <div class="container mb-5 reveal">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="accordion faq-accordion" id="faqAccordion">
+          
+          <!-- FAQ Item 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                What materials are used in your sofas?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                We use only premium materials for our sofas. Our frames are constructed from kiln-dried hardwood for maximum durability. Upholstery options include top-grain Italian leather, performance velvet, and high-quality linen blends. Cushions feature high-resiliency foam wrapped in down or down-alternative for ultimate comfort.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                How long does shipping take?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                In-stock items typically ship within 3-5 business days and arrive within 1-2 weeks. Custom orders or out-of-stock items usually take 6-8 weeks to be crafted and delivered. You will receive a tracking number once your order has shipped.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Do you offer white-glove delivery?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes! We offer white-glove delivery for an additional fee. This service includes delivery to your room of choice, unpacking, full assembly, and removal of all packaging materials. You can select this option during checkout.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                What is your return policy?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                We offer a 30-day return policy on all standard items. If you're not completely satisfied with your purchase, you can return it within 30 days of delivery for a full refund, minus return shipping costs. Custom orders are non-refundable unless there is a manufacturing defect.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Do your products come with a warranty?
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes, all our sofas come with a comprehensive 5-year warranty covering the frame and suspension system. Cushions and upholstery are covered by a 1-year warranty against manufacturing defects. Normal wear and tear is not covered.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-container"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/compare.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Scroll Reveal
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      setTimeout(reveal, 100);
+    });
+  </script>
+</body>
+</html>

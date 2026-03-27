@@ -1,0 +1,501 @@
+/* BRAND PAGE STYLES */
+
+/* 1. Brand Hero Section */
+.brand-page-hero {
+  position: relative;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.brand-page-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax */
+  z-index: 0;
+  will-change: transform;
+}
+
+.brand-page-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.brand-page-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  max-width: 800px;
+  width: 90%;
+  transform: translateY(30px);
+  opacity: 0;
+  animation: fadeUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards 0.5s;
+}
+
+.brand-logo-large {
+  max-width: 200px;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+.brand-tagline {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* 2. Brand Story */
+.brand-story-section {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-story-img-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.brand-story-img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.brand-story-img-wrapper:hover .brand-story-img {
+  transform: scale(1.05);
+}
+
+.brand-story-text {
+  padding: 2rem;
+}
+
+/* 3. Brand Products */
+.brand-products-section {
+  padding: 6rem 0;
+  background-color: var(--bg-color);
+}
+
+.brand-product-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid var(--border-color);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Glassmorphism */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand-product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .brand-product-card:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.brand-product-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+}
+
+.brand-product-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.brand-product-card:hover .brand-product-img {
+  transform: scale(1.1);
+}
+
+.brand-product-actions {
+  position: absolute;
+  top: 15px;
+  right: -50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: right 0.3s ease;
+}
+
+.brand-product-card:hover .brand-product-actions {
+  right: 15px;
+}
+
+.brand-action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.brand-action-btn:hover {
+  background: var(--accent-color);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.brand-product-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-product-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
+}
+
+.brand-product-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.brand-add-cart-btn {
+  margin-top: auto;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0.75rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.brand-add-cart-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--accent-color);
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.brand-add-cart-btn:hover::before {
+  width: 100%;
+}
+
+.brand-add-cart-btn:hover {
+  color: #fff;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(193, 154, 107, 0.5); /* Glow effect */
+}
+
+/* 4. Brand Gallery (Masonry) */
+.brand-gallery-section {
+  padding: 6rem 0;
+}
+
+.masonry-grid {
+  column-count: 3;
+  column-gap: 1.5rem;
+}
+
+@media (max-width: 991px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 575px) {
+  .masonry-grid {
+    column-count: unset;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .masonry-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+
+  .masonry-item {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    margin-bottom: 0;
+  }
+  
+  .masonry-img {
+    height: 300px;
+    object-fit: cover;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.masonry-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.masonry-item:hover .masonry-img {
+  transform: scale(1.05);
+}
+
+.masonry-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.masonry-item:hover .masonry-overlay {
+  opacity: 1;
+}
+
+.masonry-overlay i {
+  color: #fff;
+  font-size: 2rem;
+  transform: scale(0.5);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.masonry-item:hover .masonry-overlay i {
+  transform: scale(1);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.lightbox.active .lightbox-img {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+  color: var(--accent-color);
+}
+
+/* 5. Why People Love */
+.brand-features-section {
+  padding: 6rem 0;
+  background: var(--bg-color);
+  position: relative;
+}
+
+.feature-glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  height: 100%;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.feature-glass-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .feature-glass-card:hover {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.feature-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(193, 154, 107, 0.1);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s ease;
+}
+
+.feature-glass-card:hover .feature-icon-wrapper {
+  background: var(--accent-color);
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+  position: relative;
+  z-index: 1;
+}
+
+.feature-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* 6. Related Products */
+.related-products-section {
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+/* Floating Shapes */
+.brand-floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-color), transparent);
+  opacity: 0.1;
+  filter: blur(40px);
+  z-index: 0;
+  animation: float 10s infinite ease-in-out alternate;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+}
+
+.shape-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -150px;
+  right: -100px;
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(30px, 50px) rotate(20deg); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | Oxford Sofas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pt-5 mt-4">
+  <div id="navbar-container"></div>
+
+  <div class="container my-5 reveal" id="product-details-container">
+    <!-- Injected by JS -->
+  </div>
+
+  <section class="container my-5 py-5 border-top reveal" id="reviews-section">
+    <h3 class="font-playfair mb-4">Customer Reviews</h3>
+    <div class="row g-5">
+      <div class="col-lg-8">
+        <div id="reviews-list" class="d-flex flex-column gap-4">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="glass-card p-4 rounded-4">
+          <h5 class="font-playfair fw-bold mb-3">Write a Review</h5>
+          <form id="review-form">
+            <div class="mb-3">
+              <label for="review-name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="review-name" required>
+            </div>
+            <div class="mb-3">
+              <label for="review-rating" class="form-label">Rating</label>
+              <select class="form-select" id="review-rating" required>
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Star</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="review-comment" class="form-label">Comment</label>
+              <textarea class="form-control" id="review-comment" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold w-100">Submit Review</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-5 py-5 border-top reveal">
+    <h3 class="font-playfair mb-4 text-center">Related Products</h3>
+    <div class="row g-4" id="related-products">
+      <!-- Injected by JS -->
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/compare.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = parseInt(urlParams.get('id'));
+      const product = products.find(p => p.id === productId);
+      
+      const container = document.getElementById('product-details-container');
+      
+      if (!product) {
+        container.innerHTML = '<div class="text-center py-5"><h2>Product not found</h2><a href="shop.html" class="btn btn-gold mt-3">Back to Shop</a></div>';
+        return;
+      }
+
+      document.title = `${product.name} | Oxford Sofas`;
+
+      container.innerHTML = `
+        <div class="row g-5">
+          <div class="col-md-6">
+            <div class="product-gallery-main shadow-sm" id="main-image-container">
+              <img src="${normalizeImagePath(product.image)}" id="main-product-image" alt="${product.name}">
+            </div>
+            ${product.images && product.images.length > 0 ? `
+            <div class="product-gallery-thumbnails">
+              ${product.images.map((img, idx) => `
+                <div class="thumbnail-item ${idx === 0 ? 'active' : ''}" onclick="changeMainImage('${normalizeImagePath(img)}', this)">
+                  <img src="${normalizeImagePath(img)}" alt="${product.name} thumbnail ${idx + 1}">
+                </div>
+              `).join('')}
+            </div>
+            ` : ''}
+          </div>
+          <div class="col-md-6 d-flex flex-column justify-content-center">
+            <p class="text-muted text-uppercase tracking-wider small mb-2">${product.brand}</p>
+            <h1 class="font-playfair display-5 mb-3">${product.name}</h1>
+            <div class="d-flex align-items-center mb-4">
+              <div class="text-warning me-3 fs-5">${getStars(product.rating)}</div>
+              <span class="text-muted small">(128 Reviews)</span>
+            </div>
+            <h2 class="fw-bold mb-4">$${product.price.toLocaleString()}</h2>
+            <p class="lead text-muted mb-4">${product.description || `Experience unparalleled comfort and sophisticated design with the ${product.name}. Crafted from premium ${product.material.toLowerCase()} and finished in an elegant ${product.color.toLowerCase()} hue.`}</p>
+            
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="input-group" style="width: 130px;">
+                <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('qty').value = Math.max(1, parseInt(document.getElementById('qty').value) - 1)">-</button>
+                <input type="number" id="qty" class="form-control text-center" value="1" min="1">
+                <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('qty').value = parseInt(document.getElementById('qty').value) + 1">+</button>
+              </div>
+              <button class="btn btn-gold flex-grow-1 py-2 ripple" onclick="addToCart(${product.id}, parseInt(document.getElementById('qty').value))">Add to Cart</button>
+            </div>
+            
+            <div class="d-flex gap-3 mb-5">
+              <button class="btn btn-outline-dark-custom flex-grow-1" onclick="addToWishlist(${product.id})"><i class="fas fa-heart me-2"></i> Add to Wishlist</button>
+              <button class="btn btn-outline-dark-custom flex-grow-1" onclick="addToCompare(${product.id})"><i class="fas fa-exchange-alt me-2"></i> Compare</button>
+            </div>
+
+            <ul class="nav nav-tabs mb-3" id="productTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc" type="button" role="tab" aria-controls="desc" aria-selected="true" style="color: var(--text-color);">Description</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button" role="tab" aria-controls="specs" aria-selected="false" style="color: var(--text-color);">Specifications</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="productTabsContent">
+              <div class="tab-pane fade show active text-muted" id="desc" role="tabpanel" aria-labelledby="desc-tab">
+                <p>${product.description || `The ${product.name} is a masterpiece of modern furniture design. It seamlessly blends comfort with a sleek, minimalist aesthetic, making it the perfect centerpiece for any contemporary living space.`}</p>
+              </div>
+              <div class="tab-pane fade text-muted" id="specs" role="tabpanel" aria-labelledby="specs-tab">
+                <ul class="list-unstyled">
+                  <li class="mb-2"><strong>Material:</strong> ${product.material}</li>
+                  <li class="mb-2"><strong>Color:</strong> ${product.color}</li>
+                  <li class="mb-2"><strong>Category:</strong> ${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</li>
+                  <li class="mb-2"><strong>Dimensions:</strong> 84"W x 38"D x 34"H</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Render related products
+      const related = document.getElementById('related-products');
+      if(related) {
+        products.filter(p => p.category === product.category && p.id !== product.id).slice(0,4).forEach((p, index) => {
+          const staggerClass = `stagger-${(index % 4) + 1}`;
+          const cardHTML = renderProductCard(p).replace('class="col-6 col-md-4 col-lg-3"', `class="col-6 col-md-4 col-lg-3 reveal active ${staggerClass}"`);
+          related.innerHTML += cardHTML;
+        });
+      }
+
+      // Render Reviews
+      function renderReviews() {
+        const reviewsKey = `reviews_${productId}`;
+        const reviews = JSON.parse(localStorage.getItem(reviewsKey)) || [
+          { name: "Jane Doe", rating: 5, comment: "Absolutely love this sofa! The quality is amazing and it looks perfect in my living room.", date: "2026-03-10" },
+          { name: "John Smith", rating: 4, comment: "Very comfortable and stylish. Delivery took a bit longer than expected, but worth the wait.", date: "2026-03-05" }
+        ];
+        
+        const reviewsList = document.getElementById('reviews-list');
+        if (reviews.length === 0) {
+          reviewsList.innerHTML = '<p class="text-muted">No reviews yet. Be the first to review this product!</p>';
+          return;
+        }
+
+        reviewsList.innerHTML = reviews.map(review => `
+          <div class="review-card p-4 rounded-4" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h6 class="mb-0 fw-bold">${review.name}</h6>
+              <small class="text-muted">${new Date(review.date).toLocaleDateString()}</small>
+            </div>
+            <div class="text-warning mb-2" style="font-size: 0.9rem;">
+              ${getStars(review.rating)}
+            </div>
+            <p class="mb-0 text-muted" style="font-size: 0.95rem;">${review.comment}</p>
+          </div>
+        `).join('');
+      }
+
+      renderReviews();
+
+      // Handle Review Submission
+      document.getElementById('review-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('review-name').value;
+        const rating = parseInt(document.getElementById('review-rating').value);
+        const comment = document.getElementById('review-comment').value;
+        
+        const newReview = {
+          name,
+          rating,
+          comment,
+          date: new Date().toISOString()
+        };
+
+        const reviewsKey = `reviews_${productId}`;
+        const reviews = JSON.parse(localStorage.getItem(reviewsKey)) || [
+          { name: "Jane Doe", rating: 5, comment: "Absolutely love this sofa! The quality is amazing and it looks perfect in my living room.", date: "2026-03-10" },
+          { name: "John Smith", rating: 4, comment: "Very comfortable and stylish. Delivery took a bit longer than expected, but worth the wait.", date: "2026-03-05" }
+        ];
+        
+        reviews.unshift(newReview);
+        localStorage.setItem(reviewsKey, JSON.stringify(reviews));
+        
+        renderReviews();
+        e.target.reset();
+        
+        if (typeof showToast === 'function') {
+          showToast('Review submitted successfully!', 'success');
+        } else {
+          alert('Review submitted successfully!');
+        }
+      });
+
+      // Scroll Reveal
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      setTimeout(reveal, 100);
+
+      // Image Zoom Effect
+      const mainImageContainer = document.getElementById('main-image-container');
+      const mainProductImage = document.getElementById('main-product-image');
+      
+      if (mainImageContainer && mainProductImage) {
+        mainImageContainer.addEventListener('mousemove', function(e) {
+          const { left, top, width, height } = mainImageContainer.getBoundingClientRect();
+          const x = (e.clientX - left) / width * 100;
+          const y = (e.clientY - top) / height * 100;
+          
+          mainProductImage.style.transformOrigin = `${x}% ${y}%`;
+          mainProductImage.style.transform = 'scale(2)';
+        });
+
+        mainImageContainer.addEventListener('mouseleave', function() {
+          mainProductImage.style.transformOrigin = 'center center';
+          mainProductImage.style.transform = 'scale(1)';
+        });
+      }
+    });
+
+    // Global function for thumbnail click
+    function changeMainImage(src, element) {
+      const mainImage = document.getElementById('main-product-image');
+      if (mainImage) {
+        mainImage.style.opacity = '0.5';
+        setTimeout(() => {
+          mainImage.src = src;
+          mainImage.style.opacity = '1';
+        }, 150);
+      }
+      
+      // Update active state
+      document.querySelectorAll('.thumbnail-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      if (element) {
+        element.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
