@@ -538,6 +538,78 @@ const products = [
   }
 ];
 
+// ==== runtime normalization for product images (data.js only) ====
+(function normalizeProductImages() {
+  const available = [
+    'about1.png','about2.png','about3.png','about4.png','about5.png',
+    'andes1.png','andes2.png','andes3.png',
+    'apollo1.png','apollo2.png','apollo3.png','apollo4.png',
+    'art1.png','art2.png','art3.png',
+    'Chelsea1.png','Chelsea2.png','chelsea3.png',
+    'ches1.png','ches2.png','ches3.png',
+    'cloud1.png','cloud2.png',
+    'download (1).png','download (2).png','download.png',
+    'elegance1.png','elegance2.png','elegance3.png','elegance4.png',
+    'elm.png','elm2.png','elm3.png','elm4.png',
+    'emily1.png','emily2.png','emily3.png',
+    'flo1.png','flo2.png','flo3.png',
+    'fr1.png','fr2.png','fr3.png','fr4.png',
+    'habitat-UAE-Logo-1.png',
+    'handrick2.png','haven1.png','haven2.png','haven3.png','hendrick.png','hendrick1.png',
+    'hero-img3.jpg','hero2.png',
+    'Kendal1.png','Kendal2.png',
+    'kivi1.png','kivi2.png','kivi3.png','kivi4.png',
+    'lom1.png','lom2.png','lom3.png',
+    'loveseat1.png','loveseat2.png','loveseat3.png',
+    'mo1.png','mo2.png','mo3.png','mo4.png',
+    'newp1.png','newp2.png','newp3.png',
+    'nordic1.png','nordic2.png','nordic3.png','nordic4.png',
+    'oliver1.png','oliver2.png','oliver3.png','oliver4.png',
+    'oxf1.png','oxf2.png',
+    'Po1.png','Po2.png','po3.png',
+    'rec1.png','rec2.png','rec3.png',
+    'sectional1.png','Sectional2.png','Sectional3.png','Sectional4.png',
+    'shophero.png','shophero1.png','shophero2.png',
+    'so1.png','so2.png','so3.png','so4.png',
+    'sof1.png','sof2.png','sof3.png',
+    'soo1.png','soo2.png','soo3.png','soo4.png',
+    'tok1.png','tok2.png','tok3.png'
+  ];
+
+  const canonical = new Map(available.map(fn => [fn.toLowerCase(), fn]));
+  const fallback = 'images/download.png';
+
+  function normalize(src) {
+    if (!src || typeof src !== 'string') return fallback;
+    let path = src.trim();
+    if (path.startsWith('/')) path = path.slice(1);
+    if (path.toLowerCase().startsWith('images/')) path = path.slice(7);
+
+    path = path.replace(/\.(avif|webp|jpe?g)$/i, '.png');
+
+    const candidate = canonical.get(path.toLowerCase());
+    if (candidate) return 'images/' + candidate;
+
+    const base = path.replace(/\.[^.]+$/, '');
+    for (const [key, val] of canonical) {
+      if (key.startsWith(base.toLowerCase())) {
+        return 'images/' + val;
+      }
+    }
+
+    return fallback;
+  }
+
+  for (const product of products) {
+    product.image = normalize(product.image);
+    if (Array.isArray(product.images)) {
+      product.images = product.images.map(normalize);
+    } else {
+      product.images = [product.image];
+    }
+  }
+})();
+
 // ==== Data.js-only product image path canonicalization for GitHub Pages (case-sensitive) ====
 (function normalizeDataImages() {
   const filedFiles = [
