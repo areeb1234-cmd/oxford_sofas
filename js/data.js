@@ -4,10 +4,10 @@ const products = [
     name: "The Oxford Classic", 
     price: 1299, 
     rating: 5, 
-    image: "images/Oxf1.avif", 
+    image: "images/Oxf1.png", 
     images: [
-      "images/Oxf1.avif",
-      "images/Oxf2.avif",
+      "images/Oxf1.png",
+      "images/Oxf2.png",
       
     ],
     brand: "Oxford", 
@@ -22,10 +22,10 @@ const products = [
     name: "Minimalist Cloud Sofa", 
     price: 899, 
     rating: 4.5, 
-    image: "images/Cloud1.jpg", 
+    image: "images/Cloud1.png", 
     images: [
-      "images/Cloud2.jpg",
-      "images/Cloud1.jpg",
+      "images/Cloud2.png",
+      "images/Cloud1.png",
     ],
     brand: "Cloud", 
     material: "Fabric", 
@@ -39,11 +39,11 @@ const products = [
     name: "Velvet Elegance Couch", 
     price: 1499, 
     rating: 5, 
-    image: "images/elegance1.jpg", 
+    image: "images/elegance1.png", 
     images: [
-      "images/elegance2.jpg",
-      "images/elegance3.jpg",
-      "images/elegance4.jpg"
+      "images/elegance2.png",
+      "images/elegance3.png",
+      "images/elegance4.png"
     ],
     brand: "Oxford", 
     material: "Velvet", 
@@ -537,4 +537,48 @@ const products = [
     description: "Stylish sleeper sofa that doesn't compromise on comfort or design." 
   }
 ];
+
+// Normalize all product image paths here so file names are canonical and existing assets are used
+(function normalizeProductsImagePaths() {
+  const defaultFallback = 'images/download.png';
+
+  function normalizeImagePath(src) {
+    if (!src || typeof src !== 'string') return defaultFallback;
+
+    let path = src.trim().replace(/^\/?images\//i, 'images/');
+    path = path.toLowerCase();
+
+    // Convert unsupported/unknown extensions to .png
+    path = path.replace(/\.(avif|webp|jpe?g)$/i, '.png');
+
+    // Keep folder prefix stable
+    if (!path.startsWith('images/')) {
+      path = `images/${path}`;
+    }
+
+    // Normalize known alias names for existing filenames
+    path = path.replace('images/oxf1.png', 'images/oxf1.png')
+               .replace('images/oxf2.png', 'images/oxf2.png')
+               .replace('images/cloud1.png', 'images/cloud1.png')
+               .replace('images/cloud2.png', 'images/cloud2.png');
+
+    // Add fallback to prevent broken icon if an entry does not exist,
+    // this will require the asset `images/download.png` exist in the project.
+    const imgProbe = new Image();
+    imgProbe.src = path;
+    imgProbe.onerror = () => {
+      imgProbe.src = defaultFallback;
+    };
+    return path;
+  }
+
+  products.forEach(product => {
+    product.image = normalizeImagePath(product.image);
+    if (Array.isArray(product.images)) {
+      product.images = product.images.map(normalizeImagePath);
+    } else {
+      product.images = [product.image];
+    }
+  });
+})();
 
