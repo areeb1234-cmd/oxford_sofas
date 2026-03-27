@@ -538,24 +538,39 @@ const products = [
   }
 ];
 
-// Normalize all product image paths here so file names are canonical and existing assets are used
-(function normalizeProductsImagePaths() {
-  const defaultFallback = 'images/download.png';
+// Products image normalization helper (data.js only)
+function normalizeImagePath(src) {
+  const fallback = 'images/download.png';
+  if (!src || typeof src !== 'string') return fallback;
 
-  function normalizeImagePath(src) {
-    if (!src || typeof src !== 'string') return defaultFallback;
+  let path = src.trim();
+  if (path.startsWith('/')) path = path.slice(1);
+  if (!/^images\//i.test(path)) path = `images/${path}`;
 
-    let path = src.trim().replace(/^\/?images\//i, 'images/');
-    path = path.toLowerCase();
+  path = path.replace(/^images\//i, 'images/');
+  path = path.replace(/\.(avif|webp|jpe?g)$/i, '.png');
+  path = path.toLowerCase();
 
-    // Convert unsupported/unknown extensions to .png
-    path = path.replace(/\.(avif|webp|jpe?g)$/i, '.png');
+  if (!path.startsWith('images/')) {
+    return fallback;
+  }
 
-    // Keep folder prefix stable
-    if (!path.startsWith('images/')) {
-      path = `images/${path}`;
+  return path;
+}
+
+function normalizeProductImages() {
+  products.forEach(product => {
+    product.image = normalizeImagePath(product.image);
+
+    if (Array.isArray(product.images)) {
+      product.images = product.images.map(img => normalizeImagePath(img));
+    } else {
+      product.images = [product.image];
     }
+  });
+}
 
+normalizeProductImages();
     // Normalize known alias names for existing filenames
     path = path.replace('images/oxf1.png', 'images/oxf1.png')
                .replace('images/oxf2.png', 'images/oxf2.png')
